@@ -12,406 +12,6 @@
       <size top="10" left="10" bottom="10" right="10"/>
     </border>
     <children>
-      <component id="4244" class="javax.swing.JTextField" binding="text_card1">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="7c9ce" class="javax.swing.JTextField" binding="text_card2">
-        <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="43e88" class="javax.swing.JTextField" binding="text_card3">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="afdeb" class="javax.swing.JTextField" binding="text_card4">
-        <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="59916" class="javax.swing.JTextField" binding="text_card5">
-        <constraints>
-          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="f8754" class="javax.swing.JTextField" binding="text_card6">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="25b09" class="javax.swing.JTextField" binding="text_card7">
-        <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="bc7cd" class="javax.swing.JTextField" binding="text_card8">
-        <constraints>
-          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="8f80d" class="javax.swing.JTextField" binding="text_card9">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="62e19" class="javax.swing.JTextField" binding="text_card10">
-        <constraints>
-          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="30675" class="javax.swing.JTextField" binding="text_card11">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="65d77" class="javax.swing.JTextField" binding="text_card12">
-        <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="cbeab" class="javax.swing.JTextField" binding="text_card13">
-        <constraints>
-          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="fbbbd" class="javax.swing.JTextField" binding="text_card14">
-        <constraints>
-          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="520e4" class="javax.swing.JTextField" binding="text_card15">
-        <constraints>
-          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="d3d0" class="javax.swing.JTextField" binding="text_card16">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="a6feb" class="javax.swing.JTextField" binding="text_card17">
-        <constraints>
-          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="56890" class="javax.swing.JTextField" binding="text_card18">
-        <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="2fae3" class="javax.swing.JTextField" binding="text_card19">
-        <constraints>
-          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="49b28" class="javax.swing.JTextField" binding="text_card20">
-        <constraints>
-          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="16b96" class="javax.swing.JTextField" binding="text_card21">
-        <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="718e9" class="javax.swing.JTextField" binding="text_card22">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="cbe88" class="javax.swing.JTextField" binding="text_card23">
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="9441b" class="javax.swing.JTextField" binding="text_card24">
-        <constraints>
-          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
-      <component id="5b21f" class="javax.swing.JTextField" binding="text_card25">
-        <constraints>
-          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="2" hsize-policy="0" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <minimum-size width="150" height="100"/>
-            <preferred-size width="150" height="100"/>
-            <maximum-size width="150" height="100"/>
-          </grid>
-        </constraints>
-        <properties>
-          <background color="-592141"/>
-          <editable value="false"/>
-          <foreground color="-16777216"/>
-          <horizontalAlignment value="0"/>
-          <text value="Word_here"/>
-        </properties>
-      </component>
       <component id="cb7c4" class="javax.swing.JTextField" binding="role_display">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="2" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -471,6 +71,396 @@
           <foreground color="-16053493"/>
           <horizontalAlignment value="0"/>
           <text value="Hint_word"/>
+        </properties>
+      </component>
+      <component id="7e032" class="javax.swing.JButton" binding="text_card1">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="9cf23" class="javax.swing.JButton" binding="text_card2">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="f590d" class="javax.swing.JButton" binding="text_card3">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="a41fe" class="javax.swing.JButton" binding="text_card4">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="b0772" class="javax.swing.JButton" binding="text_card5">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="f12c9" class="javax.swing.JButton" binding="text_card6">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="d233a" class="javax.swing.JButton" binding="text_card7">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="6356c" class="javax.swing.JButton" binding="text_card8">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="93164" class="javax.swing.JButton" binding="text_card9">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="d4124" class="javax.swing.JButton" binding="text_card10">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="2cfe7" class="javax.swing.JButton" binding="text_card12">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="26bd7" class="javax.swing.JButton" binding="text_card13">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="2c4ea" class="javax.swing.JButton" binding="text_card11">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="c5e3a" class="javax.swing.JButton" binding="text_card14">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="e3332" class="javax.swing.JButton" binding="text_card15">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="87371" class="javax.swing.JButton" binding="text_card16">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="1b5bb" class="javax.swing.JButton" binding="text_card17">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="53a18" class="javax.swing.JButton" binding="text_card18">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="d3453" class="javax.swing.JButton" binding="text_card19">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="5bb6f" class="javax.swing.JButton" binding="text_card20">
+        <constraints>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="69cf2" class="javax.swing.JButton" binding="text_card21">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="b4d5e" class="javax.swing.JButton" binding="text_card22">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="3e35d" class="javax.swing.JButton" binding="text_card23">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="38ed8" class="javax.swing.JButton" binding="text_card24">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
+        </properties>
+      </component>
+      <component id="62410" class="javax.swing.JButton" binding="text_card25">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
+            <minimum-size width="150" height="100"/>
+            <preferred-size width="150" height="100"/>
+            <maximum-size width="150" height="100"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-592141"/>
+          <foreground color="-4471095"/>
+          <hideActionText value="true"/>
+          <horizontalTextPosition value="0"/>
+          <text value="Button"/>
         </properties>
       </component>
     </children>

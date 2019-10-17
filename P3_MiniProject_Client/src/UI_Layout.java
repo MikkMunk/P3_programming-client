@@ -1,46 +1,49 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class UI_Layout {
+    Word[] words;
+
     private JPanel Gamescreen_view;
-    private JTextField text_card1;
-    private JTextField text_card2;
-    private JTextField text_card3;
-    private JTextField text_card4;
-    private JTextField text_card5;
-    private JTextField text_card6;
-    private JTextField text_card7;
-    private JTextField text_card8;
-    private JTextField text_card9;
-    private JTextField text_card10;
-    private JTextField text_card11;
-    private JTextField text_card12;
-    private JTextField text_card13;
-    private JTextField text_card14;
-    private JTextField text_card15;
-    private JTextField text_card16;
-    private JTextField text_card17;
-    private JTextField text_card18;
-    private JTextField text_card19;
-    private JTextField text_card20;
-    private JTextField text_card21;
-    private JTextField text_card22;
-    private JTextField text_card23;
-    private JTextField text_card24;
-    private JTextField text_card25;
     private JTextField role_display;
     private JTextField team_display;
     private JTextField hint_display;
     private JTextField guessNo_display;
+    private JButton text_card1;
+    private JButton text_card2;
+    private JButton text_card3;
+    private JButton text_card4;
+    private JButton text_card5;
+    private JButton text_card6;
+    private JButton text_card7;
+    private JButton text_card8;
+    private JButton text_card9;
+    private JButton text_card10;
+    private JButton text_card11;
+    private JButton text_card12;
+    private JButton text_card13;
+    private JButton text_card14;
+    private JButton text_card15;
+    private JButton text_card16;
+    private JButton text_card17;
+    private JButton text_card18;
+    private JButton text_card19;
+    private JButton text_card20;
+    private JButton text_card21;
+    private JButton text_card22;
+    private JButton text_card23;
+    private JButton text_card24;
+    private JButton text_card25;
 
-    private JTextField[] text_cards = {text_card1,text_card2,text_card3,text_card4,text_card5, text_card6,text_card7,
-            text_card8,text_card9,text_card10,text_card11,text_card12,text_card13,text_card14,text_card15,text_card16,
-            text_card17,text_card18,text_card19,text_card20,text_card21,text_card22,text_card23,text_card24,text_card25};
+    private JButton[] text_cards = {text_card1, text_card2, text_card3, text_card4, text_card5, text_card6, text_card7,
+            text_card8, text_card9, text_card10, text_card11, text_card12, text_card13, text_card14, text_card15, text_card16,
+            text_card17, text_card18, text_card19, text_card20, text_card21, text_card22, text_card23, text_card24, text_card25};
 
-    UI_Layout(Word [] words){
-        for (int i = 0; i > 25; i++){
-            text_cards[i].setText(words[i].getText());
-        }
+    UI_Layout(Word[] words) {
+        this.words = words;
+        text_card1.addActionListener(new gameStarted());
     }
 
     public static void main(String[] args) {
@@ -51,6 +54,15 @@ public class UI_Layout {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
+
     }
 
+
+    class gameStarted implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) {
+            text_card1.setText("hello");
+        }
+    }
 }
