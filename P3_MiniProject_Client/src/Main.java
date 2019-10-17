@@ -20,14 +20,26 @@ public class Main {
 
                 Word word1 = new Word();
 
-                System.out.print("Enter word string: ");
-                word1.hej = input.nextLine();
-                System.out.print("Enter word int: ");
+                System.out.print("1Enter word string: ");
+                word1.hej = input.next();
+                System.out.print("1Enter word int: ");
                 word1.number = input.nextInt();
-                System.out.print("Enter word bool: ");
+                System.out.print("1Enter word bool: ");
                 word1.setHah(input.nextBoolean());
 
                 objectOutputStream.writeObject(word1);
+
+                Word word2 = new Word();
+
+                System.out.print("2Enter word string: ");
+                word2.hej = input.next();
+                System.out.print("2Enter word int: ");
+                word2.number = input.nextInt();
+                System.out.print("2Enter word bool: ");
+                word2.setHah(input.nextBoolean());
+
+                objectOutputStream.writeObject(word2);
+
 
 
                 if (input.next().equals("no")) {
