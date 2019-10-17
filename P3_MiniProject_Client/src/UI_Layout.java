@@ -33,9 +33,21 @@ public class UI_Layout {
     private JTextField hint_display;
     private JTextField guessNo_display;
 
+    private JTextField[] text_cards = {text_card1,text_card2,text_card3,text_card4,text_card5, text_card6,text_card7,
+            text_card8,text_card9,text_card10,text_card11,text_card12,text_card13,text_card14,text_card15,text_card16,
+            text_card17,text_card18,text_card19,text_card20,text_card21,text_card22,text_card23,text_card24,text_card25};
+
+    UI_Layout(Word [] words){
+        for (int i = 0; i > 25; i++){
+            text_cards[i].setText(words[i].getText());
+        }
+    }
+
     public static void main(String[] args) {
+        Word[] words = new Word[25];
+
         JFrame frame = new JFrame("UI_Layout");
-        frame.setContentPane(new UI_Layout().Gamescreen_view);
+        frame.setContentPane(new UI_Layout(words).Gamescreen_view);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);

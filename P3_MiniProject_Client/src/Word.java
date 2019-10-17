@@ -1,7 +1,7 @@
 import java.io.Serializable;
 
 public class Word implements Serializable {
-    String hej = "hej";
+    String text = "hej";
     int number = 1;
     boolean hah = true;
 
@@ -10,5 +10,9 @@ public class Word implements Serializable {
 
     public void setHah(boolean hah) {
         this.hah = hah;
+    }
+
+    public String getText() {
+        return text;
     }
 }

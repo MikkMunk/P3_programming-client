@@ -21,7 +21,7 @@ public class Main {
                 Word word1 = new Word();
 
                 System.out.print("1Enter word string: ");
-                word1.hej = input.next();
+                word1.text = input.next();
                 System.out.print("1Enter word int: ");
                 word1.number = input.nextInt();
                 System.out.print("1Enter word bool: ");
@@ -32,7 +32,7 @@ public class Main {
                 Word word2 = new Word();
 
                 System.out.print("2Enter word string: ");
-                word2.hej = input.next();
+                word2.text = input.next();
                 System.out.print("2Enter word int: ");
                 word2.number = input.nextInt();
                 System.out.print("2Enter word bool: ");
