@@ -20,8 +20,12 @@ public class Main {
 
                 Word word1 = new Word();
 
-                System.out.print("Enter word number: ");
+                System.out.print("Enter word string: ");
+                word1.hej = input.nextLine();
+                System.out.print("Enter word int: ");
                 word1.number = input.nextInt();
+                System.out.print("Enter word bool: ");
+                word1.setHah(input.nextBoolean());
 
                 objectOutputStream.writeObject(word1);
 
@@ -33,8 +37,8 @@ public class Main {
             input.close();
             socket.close();
         }
-        catch (IOException ex) {
-            System.out.println(ex.toString() + '\n');
+        catch (Exception e) {
+            throw new Error ("bad thing also happen");
         }
 
     }
