@@ -1,7 +1,8 @@
 import javax.swing.*;
+import java.awt.*;
 
 public class UI_Layout {
-    private JPanel panel1;
+    private JPanel Gamescreen_view;
     private JTextField text_card1;
     private JTextField text_card2;
     private JTextField text_card3;
@@ -27,8 +28,17 @@ public class UI_Layout {
     private JTextField text_card23;
     private JTextField text_card24;
     private JTextField text_card25;
+    private JTextField role_display;
+    private JTextField team_display;
+    private JTextField hint_display;
+    private JTextField guessNo_display;
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("UI_Layout");
+        frame.setContentPane(new UI_Layout().Gamescreen_view);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
+
 }
