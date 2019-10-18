@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2bf6759c-5601-4f17-a194-1bdbd7b50f1a" name="Default Changelist" comment="" />
+    <list default="true" id="2bf6759c-5601-4f17-a194-1bdbd7b50f1a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout$gameStarted.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout$gameStarted.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI_Layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_Layout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Word.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,5 +89,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

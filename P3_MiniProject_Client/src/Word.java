@@ -1,15 +1,15 @@
 import java.io.Serializable;
 
 public class Word implements Serializable {
-    String text = "hej";
+    String text;
     int number = 1;
     boolean hah = true;
 
     Word() {
+        text = "hej";
     }
 
-    public void setHah(boolean hah) {
-        this.hah = hah;
+    public void setHah(boolean hah) { this.hah = hah;
     }
 
     public String getText() {
