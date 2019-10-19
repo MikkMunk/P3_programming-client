@@ -49,25 +49,18 @@ public class UI_Layout {
     UI_Layout( Cards[] cards, int role) {
         this.cards = cards;
         this.role = role;
-        text_card1.addActionListener(new gameStarted());
+        text_card1.addActionListener(new gameStarted()); //This action listener should be on the start button
+
+        //Here should be functions hiding the text cards
     }
-
-    /*public static void main(String[] args) {
-        Word [] words = new Word[25];
-
-
-        JFrame frame = new JFrame("UI_Layout");
-        frame.setContentPane(new UI_Layout(words).Gamescreen_view);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }*/
-
 
 
     class gameStarted implements ActionListener {
 
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(ActionEvent e) { //this is called when the action listener activates the class
+
+            //Here there should be functions to hide the start button and show the text cards
+
             String[] button_text = new String[25];
             for (int i = 0; i < 25; i++){
                 cards[i] = new Cards();
