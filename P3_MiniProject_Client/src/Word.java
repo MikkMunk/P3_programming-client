@@ -3,7 +3,7 @@ import java.io.Serializable;
 public class Word implements Serializable {
     String text;
     int number = 1;
-    boolean hah = true;
+    boolean hah = false;
 
     Word() {
         text = "hej";

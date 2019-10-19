@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 public class UI_Layout {
     Word [] words;
 
-    private JPanel Gamescreen_view;
+    public JPanel Gamescreen_view;
     private JTextField role_display;
     private JTextField team_display;
     private JTextField hint_display;
@@ -46,7 +46,7 @@ public class UI_Layout {
         text_card1.addActionListener(new gameStarted());
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Word [] words = new Word[25];
 
 
@@ -55,7 +55,9 @@ public class UI_Layout {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-    }
+    }*/
+
+
 
     class gameStarted implements ActionListener {
 
@@ -67,5 +69,7 @@ public class UI_Layout {
                 text_cards[i].setText(button_text[i]);
             }
         }
+
+
     }
 }

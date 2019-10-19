@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Word[] words = new Word[25];
+        Instructor_role instructor_role = new Instructor_role();
+        instructor_role.display(words);
 
         Scanner input = new Scanner(System.in);
         boolean connect = true;
