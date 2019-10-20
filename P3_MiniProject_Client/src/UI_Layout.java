@@ -4,9 +4,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class UI_Layout {
-    Word [] words;
+    Cards [] cards;
+    int role = 0;
 
-    private JPanel Gamescreen_view;
+    Color red = new Color(220, 130, 130);
+    Color blue = new Color(130, 150, 220);
+    Color grey = new Color(230, 240, 220);
+    Color black = new Color(120, 120, 120);
+
+    Color strong_red = new Color(220, 70, 70);
+    Color strong_blue = new Color(70, 90, 220);
+    Color strong_grey = new Color(170, 170, 100);
+    Color strong_black = new Color(50, 50, 50);
+
+    public JPanel Gamescreen_view;
     private JTextField role_display;
     private JTextField team_display;
     private JTextField hint_display;
@@ -41,31 +52,49 @@ public class UI_Layout {
             text_card8, text_card9, text_card10, text_card11, text_card12, text_card13, text_card14, text_card15, text_card16,
             text_card17, text_card18, text_card19, text_card20, text_card21, text_card22, text_card23, text_card24, text_card25};
 
-    UI_Layout( Word[] words) {
-        this.words = words;
-        text_card1.addActionListener(new gameStarted());
-    }
+    UI_Layout( Cards[] cards, int role) {
+        this.cards = cards;
+        this.role = role;
 
-    public static void main(String[] args) {
-        Word [] words = new Word[25];
+        String[] button_text = new String[25];
+        for (int i = 0; i < 25; i++){
+            cards[i] = new Cards();
+            button_text[i] = cards[i].getName();
+            text_cards[i].setText(button_text[i]);
+        }
 
-
-        JFrame frame = new JFrame("UI_Layout");
-        frame.setContentPane(new UI_Layout(words).Gamescreen_view);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
-
-    class gameStarted implements ActionListener {
-
-        public void actionPerformed(ActionEvent e) {
-            String[] button_text = new String[25];
+        if (role == 1){
+            int[] colors = new int[25];
             for (int i = 0; i < 25; i++){
-                words[i] = new Word();
-                button_text[i] = words[i].getText();
-                text_cards[i].setText(button_text[i]);
+                colors[i] = cards[i].getNumber();
+                if (colors[i] == 0){
+                    text_cards[i].setBackground(black);
+                }
+                else if(colors[i] == 1){
+                    text_cards[i].setBackground(grey);
+                }
+                else if(colors[i] == 2){
+                    text_cards[i].setBackground(blue);
+                }
+                else if(colors[i] == 3){
+                    text_cards[i].setBackground(red);
+                }
             }
+        }
+
+        //here should be a for loop adding action listeners to all the text cards
+    }
+
+
+    class cardChosen implements ActionListener {
+
+        public void actionPerformed(ActionEvent e) { //this is called when the action listener activates the class
+
+            //Here should be code changing the card when it has been chosen (stronger color + no text)
+            //The color change needs to depend on which color value it had previously
+            // or by checking the number value again, like when first assigning color in the constructor 
+
         }
     }
 }
+

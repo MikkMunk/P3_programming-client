@@ -5,6 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        Cards[] cards = new Cards[25];
+        Instructor_role instructor_role = new Instructor_role();
+        instructor_role.display(cards);
 
         Scanner input = new Scanner(System.in);
         boolean connect = true;
@@ -18,7 +21,7 @@ public class Main {
 
             while (connect) {
 
-                Word word1 = new Word();
+                /*Cards word1 = new Cards();
 
                 System.out.print("1Enter word string: ");
                 word1.text = input.next();
@@ -44,7 +47,7 @@ public class Main {
 
                 if (input.next().equals("no")) {
                     connect = false;
-                }
+                } */
             }
             input.close();
             socket.close();
