@@ -1,9 +1,10 @@
+import javax.smartcardio.Card;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class UI_Layout {
+public class UI_Layout{
     Cards [] cards;
     int role = 0;
 
@@ -12,10 +13,6 @@ public class UI_Layout {
     Color grey = new Color(230, 240, 220);
     Color black = new Color(120, 120, 120);
 
-    Color strong_red = new Color(220, 70, 70);
-    Color strong_blue = new Color(70, 90, 220);
-    Color strong_grey = new Color(170, 170, 100);
-    Color strong_black = new Color(50, 50, 50);
 
     public JPanel Gamescreen_view;
     private JTextField role_display;
@@ -57,42 +54,67 @@ public class UI_Layout {
         this.role = role;
 
         String[] button_text = new String[25];
-        for (int i = 0; i < 25; i++){
+        for (int i = 0; i < 25; i++) {
             cards[i] = new Cards();
             button_text[i] = cards[i].getName();
             text_cards[i].setText(button_text[i]);
         }
 
-        if (role == 1){
+        if (role == 1) {
             int[] colors = new int[25];
-            for (int i = 0; i < 25; i++){
+            for (int i = 0; i < 25; i++) {
                 colors[i] = cards[i].getNumber();
-                if (colors[i] == 0){
+                if (colors[i] == 0) {
                     text_cards[i].setBackground(black);
-                }
-                else if(colors[i] == 1){
+                } else if (colors[i] == 1) {
                     text_cards[i].setBackground(grey);
-                }
-                else if(colors[i] == 2){
+                } else if (colors[i] == 2) {
                     text_cards[i].setBackground(blue);
-                }
-                else if(colors[i] == 3){
+                } else if (colors[i] == 3) {
                     text_cards[i].setBackground(red);
                 }
             }
         }
-
-        //here should be a for loop adding action listeners to all the text cards
+        for (int i = 0; i < text_cards.length; i++) {
+            text_cards[i].addActionListener(new cardChosen(cards[i],text_cards[i]));
+        }
     }
 
 
+
+
+
     class cardChosen implements ActionListener {
+        Color strong_red = new Color(220, 70, 70);
+        Color strong_blue = new Color(70, 90, 220);
+        Color strong_grey = new Color(170, 170, 100);
+        Color strong_black = new Color(50, 50, 50);
+
+        Cards card;
+        JButton text_card;
+
+        cardChosen (Cards card, JButton text_card){
+            this.card = card;
+            this.text_card = text_card;
+
+        }
 
         public void actionPerformed(ActionEvent e) { //this is called when the action listener activates the class
+            if (card.getNumber() == 0){
+                text_card.setBackground(strong_black);
+            }
+            else if(card.getNumber() == 1){
+                text_card.setBackground(strong_grey);
+            }
+            else if(card.getNumber() == 2){
+                text_card.setBackground(strong_blue);
+            }
+            else if(card.getNumber() == 3){
+                text_card.setBackground(strong_red);
+            }
 
             //Here should be code changing the card when it has been chosen (stronger color + no text)
-            //The color change needs to depend on which color value it had previously
-            // or by checking the number value again, like when first assigning color in the constructor 
+            //The color change needs to depend on which color value it had previously// or by checking the number value again, like when first assigning color in the constructor
 
         }
     }
