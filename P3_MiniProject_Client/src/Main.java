@@ -8,15 +8,13 @@ public class Main {
     static String hintWord = "nothing";
     static int guessNum = 0;
     static boolean hintSubmitted = false;
-
+    static int turn = 7;
+    static boolean isPlaying = true;
+    static Card[] cards = new Card[25];
 
     public static void main(String[] args) {
-        int turn = 7;
-        Card[] cards = new Card[25];
         Instructor_role instructor_role = new Instructor_role();
         Guesser_role guesser_role = new Guesser_role();
-
-
 
         Scanner input = new Scanner(System.in);
         boolean connect = true;
@@ -41,44 +39,14 @@ public class Main {
                 System.out.println(isFromServer.readUTF());
                 role_number = isFromServer.readInt();
 
-                for (int i = 0; i < 25; i++ ) {
-                    cards[i] = (Card) objectInputStream.readObject();
-                    System.out.println(cards[i].getName());
+                while (isPlaying) {
+                    updateDisplay(role_number, instructor_role, guesser_role, objectInputStream, isFromServer);
+
+                    nextTurn(role_number, osToServer, isFromServer);
                 }
-                System.out.println("cards received");
 
-                if (role_number == 0){
-                    instructor_role.display(cards, 1); }
-                else if (role_number == 1){
-                    guesser_role.display(cards, 1); }
-                else if (role_number == 2){
-                    instructor_role.display(cards, 2); }
-                else if (role_number == 3){
-                    guesser_role.display(cards, 2); }
+                //connect = false;
 
-                turn = isFromServer.readInt();
-
-                if (turn == role_number) {
-                    System.out.println("It is you turn, please provide input");
-
-                    while(turn == role_number) {
-
-                        if (cardChanged != 100) {
-                            osToServer.writeInt(cardChanged);
-                            cardChanged = 100;
-                            turn = 7;
-                        }
-
-                        if (hintSubmitted) {
-                            osToServer.writeUTF(hintWord);
-                            osToServer.writeInt(guessNum);
-                            hintSubmitted = false;
-                            turn = 7;
-                        }
-                    }
-                } else {
-                    System.out.println("wait for your turn");
-                }
 
                 /*Cards word1 = new Cards();
 
@@ -128,6 +96,59 @@ public class Main {
         hintSubmitted = true;
     }
 
+    static void gameOver (){
+        isPlaying = false;
+    }
+
+    public static void updateDisplay (int role_number, Instructor_role instructor_role, Guesser_role guesser_role, ObjectInputStream objectInputStream, DataInputStream isFromServer)
+            throws IOException, ClassNotFoundException {
+        for (int i = 0; i < 25; i++ ) {
+            cards[i] = (Card) objectInputStream.readObject();
+            System.out.println(cards[i].getName());
+        }
+        System.out.println("cards received");
+
+        hintWord = isFromServer.readUTF();
+        guessNum = isFromServer.readInt();
+
+        if (role_number == 0){
+            instructor_role.display(cards, 1, hintWord, guessNum); }
+        else if (role_number == 1){
+            guesser_role.display(cards, 1, hintWord, guessNum); }
+        else if (role_number == 2){
+            instructor_role.display(cards, 2, hintWord, guessNum); }
+        else if (role_number == 3){
+            guesser_role.display(cards, 2, hintWord, guessNum); }
+    }
+
+    static void nextTurn (int role_number, DataOutputStream osToServer, DataInputStream isFromServer)
+            throws IOException {
+        turn = isFromServer.readInt();
+
+        if (turn == role_number) {
+            System.out.println("It is you turn, please provide input");
+
+            while(turn == role_number) {
+
+                if (cardChanged != 100) {
+                    osToServer.writeInt(cardChanged);
+                    cardChanged = 100;
+                    turn = 7;
+                    System.out.println("card chosen");
+                }
+
+                if (hintSubmitted) {
+                    osToServer.writeUTF(hintWord);
+                    osToServer.writeInt(guessNum);
+                    hintSubmitted = false;
+                    turn = 7;
+                    System.out.println("hint submitted");
+                }
+            }
+        } else {
+            System.out.println("wait for your turn");
+        }
+    }
 }
 
 

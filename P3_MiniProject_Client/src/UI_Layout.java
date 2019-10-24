@@ -6,6 +6,11 @@ import java.awt.event.ActionListener;
 public class UI_Layout{
     Card [] cards;
     int role = 0;
+    String hint_word = "nothing";
+    int guessNo = 0;
+    int teamNo = 0;
+
+
 
     Color red = new Color(220, 130, 130);
     Color blue = new Color(130, 150, 220);
@@ -54,9 +59,23 @@ public class UI_Layout{
             text_card8, text_card9, text_card10, text_card11, text_card12, text_card13, text_card14, text_card15, text_card16,
             text_card17, text_card18, text_card19, text_card20, text_card21, text_card22, text_card23, text_card24, text_card25};
 
-    UI_Layout( Card[] cards, int role) {
+    UI_Layout( Card[] cards, int role, String hint_Word, int guessNo, int teamNo) {
         this.cards = cards;
         this.role = role;
+        this.hint_word = hint_Word;
+        this.guessNo = guessNo;
+        this.teamNo = teamNo;
+
+        hint_display.setText(hint_word);
+        guessNo_display.setText(Integer.toString(guessNo));
+
+        if (teamNo == 1){
+            team_display.setText("Team 1");
+            team_display.setBackground(strong_red);
+        } else if (teamNo == 2){
+            team_display.setText("Team 2");
+            team_display.setBackground(strong_blue);
+        }
 
         String[] button_text = new String[25];
         for (int i = 0; i < 25; i++) {
@@ -84,6 +103,7 @@ public class UI_Layout{
             int[] colors = new int[25];
             hint_display.setEditable(true);
             guessNo_display.setEditable(true);
+            role_display.setText("Instructor");
             Submit.addActionListener(new readHint(hint_display, guessNo_display));
             for (int i = 0; i < 25; i++) {
                 if (cards[i].isPlayed() == false) {
@@ -101,6 +121,7 @@ public class UI_Layout{
             }
         }
         if(role == 2){
+            role_display.setText("Guesser");
         for (int i = 0; i < text_cards.length; i++) {
             text_cards[i].addActionListener(new cardChosen(cards[i], text_cards[i], i));
             }
