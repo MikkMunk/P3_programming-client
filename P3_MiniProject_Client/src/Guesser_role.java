@@ -2,7 +2,7 @@ import javax.swing.*;
 
 public class Guesser_role {
 
-    public void display(Cards[] cards) {
+    public void display(Card[] cards, int team) {
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override

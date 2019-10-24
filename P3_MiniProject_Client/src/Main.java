@@ -4,22 +4,81 @@ import java.util.Scanner;
 
 public class Main {
 
+    static int cardChanged = 100;
+    static String hintWord = "nothing";
+    static int guessNum = 0;
+    static boolean hintSubmitted = false;
+
+
     public static void main(String[] args) {
-        Cards[] cards = new Cards[25];
+        int turn = 7;
+        Card[] cards = new Card[25];
         Instructor_role instructor_role = new Instructor_role();
-        instructor_role.display(cards);
+        Guesser_role guesser_role = new Guesser_role();
+
+
 
         Scanner input = new Scanner(System.in);
         boolean connect = true;
 
         try {
-            Socket socket = new Socket("172.20.10.4", 9999);
+            System.out.println("about to try stuff");
+            Socket socket = new Socket("172.20.10.6", 8000);
+            System.out.println("socket made");
             DataInputStream isFromServer = new DataInputStream(socket.getInputStream());
-            //ObjectInputStream objectInputStream = new ObjectInputStream(isFromServer);
+            System.out.println("about to make object input");
+            ObjectInputStream objectInputStream = new ObjectInputStream(isFromServer);
+            System.out.println("about to make data output");
             DataOutputStream osToServer = new DataOutputStream(socket.getOutputStream());
+            System.out.println("about to make object output");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(osToServer);
+            System.out.println("Stuff got tried");
 
             while (connect) {
+                int role_number;
+
+                System.out.println("The game has started");
+                System.out.println(isFromServer.readUTF());
+                role_number = isFromServer.readInt();
+
+                for (int i = 0; i < 25; i++ ) {
+                    cards[i] = (Card) objectInputStream.readObject();
+                    System.out.println(cards[i].getName());
+                }
+                System.out.println("cards received");
+
+                if (role_number == 0){
+                    instructor_role.display(cards, 1); }
+                else if (role_number == 1){
+                    guesser_role.display(cards, 1); }
+                else if (role_number == 2){
+                    instructor_role.display(cards, 2); }
+                else if (role_number == 3){
+                    guesser_role.display(cards, 2); }
+
+                turn = isFromServer.readInt();
+
+                if (turn == role_number) {
+                    System.out.println("It is you turn, please provide input");
+
+                    while(turn == role_number) {
+
+                        if (cardChanged != 100) {
+                            osToServer.writeInt(cardChanged);
+                            cardChanged = 100;
+                            turn = 7;
+                        }
+
+                        if (hintSubmitted) {
+                            osToServer.writeUTF(hintWord);
+                            osToServer.writeInt(guessNum);
+                            hintSubmitted = false;
+                            turn = 7;
+                        }
+                    }
+                } else {
+                    System.out.println("wait for your turn");
+                }
 
                 /*Cards word1 = new Cards();
 
@@ -53,9 +112,20 @@ public class Main {
             socket.close();
         }
         catch (Exception e) {
+            System.out.println(e);
             throw new Error ("bad thing also happen");
         }
 
+    }
+
+    public static void changedColor (int cardNumber){
+        cardChanged = cardNumber;
+    }
+
+    public static void submittedHint (String hint, int guess){
+        hintWord = hint;
+        guessNum = guess;
+        hintSubmitted = true;
     }
 
 }

@@ -1,6 +1,7 @@
+
 import java.io.Serializable;
 
-public class Cards {
+public class Card implements Serializable{
 
     private String name;
     private int number;
@@ -10,14 +11,16 @@ public class Cards {
     // 2 is BLUE (8 cards)
     // 3 is RED (9 cards)
 
-    private boolean isPlayed = false;
+    private boolean played = false;
 
     public String getName() { return name; }
     public int getNumber() { return number; }
+    public boolean isPlayed() {return played;}
 
     public void setName(String name) { this.name = name; }
     public void setNumber(int number) { this.number = number; }
-    public void setPlayed(boolean played) { isPlayed = played; }
+    public void setPlayed(boolean played) { this.played = played; }
+
 }
 
 /*public class Word implements Serializable {
