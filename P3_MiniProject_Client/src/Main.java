@@ -11,17 +11,17 @@ public class Main {
     static int turn = 7;
     static boolean isPlaying = true;
     static Card[] cards = new Card[25];
+    static Instructor_role instructor_role;
+    static Guesser_role guesser_role;
 
     public static void main(String[] args) {
-        Instructor_role instructor_role = new Instructor_role();
-        Guesser_role guesser_role = new Guesser_role();
 
         Scanner input = new Scanner(System.in);
         boolean connect = true;
 
         try {
             System.out.println("about to try stuff");
-            Socket socket = new Socket("172.20.10.6", 8000);
+            Socket socket = new Socket("192.168.43.18", 8000);
             System.out.println("socket made");
             DataInputStream isFromServer = new DataInputStream(socket.getInputStream());
             System.out.println("about to make object input");
@@ -39,8 +39,12 @@ public class Main {
                 System.out.println(isFromServer.readUTF());
                 role_number = isFromServer.readInt();
 
+                loadDisplay(role_number, objectInputStream, isFromServer);
+
+                nextTurn(role_number, osToServer, isFromServer);
+
                 while (isPlaying) {
-                    updateDisplay(role_number, instructor_role, guesser_role, objectInputStream, isFromServer);
+                    updateDisplay(isFromServer, objectInputStream, role_number);
 
                     nextTurn(role_number, osToServer, isFromServer);
                 }
@@ -100,7 +104,7 @@ public class Main {
         isPlaying = false;
     }
 
-    public static void updateDisplay (int role_number, Instructor_role instructor_role, Guesser_role guesser_role, ObjectInputStream objectInputStream, DataInputStream isFromServer)
+    public static void loadDisplay (int role_number, ObjectInputStream objectInputStream, DataInputStream isFromServer)
             throws IOException, ClassNotFoundException {
         for (int i = 0; i < 25; i++ ) {
             cards[i] = (Card) objectInputStream.readObject();
@@ -112,13 +116,17 @@ public class Main {
         guessNum = isFromServer.readInt();
 
         if (role_number == 0){
-            instructor_role.display(cards, 1, hintWord, guessNum); }
+            instructor_role = new Instructor_role(cards, 1, hintWord, guessNum);
+            instructor_role.display(); }
         else if (role_number == 1){
-            guesser_role.display(cards, 1, hintWord, guessNum); }
+            guesser_role = new Guesser_role(cards, 1, hintWord, guessNum);
+            guesser_role.display(); }
         else if (role_number == 2){
-            instructor_role.display(cards, 2, hintWord, guessNum); }
+            instructor_role = new Instructor_role(cards, 2, hintWord, guessNum);
+            instructor_role.display(); }
         else if (role_number == 3){
-            guesser_role.display(cards, 2, hintWord, guessNum); }
+            guesser_role = new Guesser_role(cards, 2, hintWord, guessNum);
+            guesser_role.display(); }
     }
 
     static void nextTurn (int role_number, DataOutputStream osToServer, DataInputStream isFromServer)
@@ -147,6 +155,26 @@ public class Main {
             }
         } else {
             System.out.println("wait for your turn");
+        }
+    }
+
+    static void updateDisplay (DataInputStream isFromServer, ObjectInputStream objectInputStream, int role_number)
+            throws IOException, ClassNotFoundException {
+        for (int i = 0; i < 25; i++ ) {
+            cards[i] = (Card) objectInputStream.readObject();
+        }
+        System.out.println("cards updated");
+
+        hintWord = isFromServer.readUTF();
+        guessNum = isFromServer.readInt();
+
+        if (role_number == 0 || role_number == 2){
+            instructor_role.updateCards(cards);
+            instructor_role.displayHint(hintWord, guessNum);
+        }
+        else if (role_number == 1 || role_number == 3){
+            guesser_role.updateCards(cards);
+            guesser_role.displayHint(hintWord, guessNum);
         }
     }
 }

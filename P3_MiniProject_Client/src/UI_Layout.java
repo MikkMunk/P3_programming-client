@@ -130,8 +130,6 @@ public class UI_Layout{
 
 
 
-
-
     class cardChosen implements ActionListener {
 
         Card card;
@@ -147,22 +145,7 @@ public class UI_Layout{
         public void actionPerformed(ActionEvent e) { //this is called when the action listener activates the class
             Main.changedColor(card_number);
 
-            if (card.getNumber() == 0){
-                text_card.setBackground(strong_black);
-            }
-            else if(card.getNumber() == 1){
-                text_card.setBackground(strong_grey);
-            }
-            else if(card.getNumber() == 2){
-                text_card.setBackground(strong_blue);
-            }
-            else if(card.getNumber() == 3){
-                text_card.setBackground(strong_red);
-            }
-
-            //Here should be code changing the card when it has been chosen (stronger color + no text)
-            //The color change needs to depend on which color value it had previously// or by checking the number value again, like when first assigning color in the constructor
-
+            selectCard(card, text_card);
         }
     }
 
@@ -176,6 +159,33 @@ public class UI_Layout{
         }
         public void actionPerformed(ActionEvent e) {
             Main.submittedHint(hint.getText(), Integer.parseInt(number.getText()));
+        }
+    }
+
+    void selectCard (Card card, JButton text_card){
+        if (card.getNumber() == 0){
+            text_card.setBackground(strong_black);
+        }
+        else if(card.getNumber() == 1){
+            text_card.setBackground(strong_grey);
+        }
+        else if(card.getNumber() == 2){
+            text_card.setBackground(strong_blue);
+        }
+        else if(card.getNumber() == 3){
+            text_card.setBackground(strong_red);
+        }
+    }
+
+    public void setHint (String newHint, int newNum){
+        hint_display.setText(newHint);
+        guessNo_display.setText(Integer.toString(newNum));
+    }
+
+    public void changeCard (Card[] cards){
+        for(int i = 0; i < 25; i++) {
+            if (cards[i].isPlayed())
+                selectCard(cards[i], text_cards[i]);
         }
     }
 }
