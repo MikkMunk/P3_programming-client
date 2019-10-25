@@ -135,6 +135,7 @@ public class Main {
 
     static void nextTurn (int role_number, DataOutputStream osToServer, DataInputStream isFromServer)
             throws IOException {
+        System.out.println("new turn");
         turn = isFromServer.readInt();
 
         if (turn == role_number) {
@@ -163,6 +164,7 @@ public class Main {
 
     static void updateDisplay (DataInputStream isFromServer, ObjectInputStream objectInputStream, int role_number)
             throws IOException, ClassNotFoundException {
+        System.out.println("updating");
         for (int i = 0; i < 25; i++ ) {
             cards[i] = (Card) objectInputStream.readObject();
         }
