@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class UI_Layout{
     Card [] cards;
@@ -53,7 +54,7 @@ public class UI_Layout{
     private JButton text_card23;
     private JButton text_card24;
     private JButton text_card25;
-    private JButton Submit = new JButton("submit");
+    private JButton Submit;
 
     private JButton[] text_cards = {text_card1, text_card2, text_card3, text_card4, text_card5, text_card6, text_card7,
             text_card8, text_card9, text_card10, text_card11, text_card12, text_card13, text_card14, text_card15, text_card16,
@@ -122,8 +123,8 @@ public class UI_Layout{
         }
         if(role == 2){
             role_display.setText("Guesser");
-        for (int i = 0; i < text_cards.length; i++) {
-            text_cards[i].addActionListener(new cardChosen(cards[i], text_cards[i], i));
+            for (int i = 0; i < text_cards.length; i++) {
+                text_cards[i].addActionListener(new cardChosen(cards[i], text_cards[i], i));
             }
         }
     }
@@ -157,11 +158,15 @@ public class UI_Layout{
             this.hint = hint;
             this.number = number;
         }
+        @Override
         public void actionPerformed(ActionEvent e) {
-            String command = e.getActionCommand();
-           if (command.equals("submit")){
-               Main.submittedHint(hint.getText(), Integer.parseInt(number.getText()));
-           }
+            System.out.println("action listener activated");
+            String hintWord = hint.getText();
+            int hintNumber = Integer.parseInt(number.getText());
+            System.out.println(hintWord + " " + hintNumber);
+            try {
+                Main.submittedHint(hint.getText(), Integer.parseInt(number.getText()));
+            } catch (IOException ex){}
         }
     }
 
@@ -192,4 +197,3 @@ public class UI_Layout{
         }
     }
 }
-

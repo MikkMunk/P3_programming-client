@@ -14,6 +14,8 @@ public class Main {
     static Instructor_role instructor_role;
     static Guesser_role guesser_role;
 
+    static DataOutputStream osToServer;
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -27,7 +29,7 @@ public class Main {
             System.out.println("about to make object input");
             ObjectInputStream objectInputStream = new ObjectInputStream(isFromServer);
             System.out.println("about to make data output");
-            DataOutputStream osToServer = new DataOutputStream(socket.getOutputStream());
+            osToServer = new DataOutputStream(socket.getOutputStream());
             System.out.println("about to make object output");
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(osToServer);
             System.out.println("Stuff got tried");
@@ -94,10 +96,12 @@ public class Main {
         cardChanged = cardNumber;
     }
 
-    public static void submittedHint (String hint, int guess){
+    public static void submittedHint (String hint, int guess) throws IOException {
         hintWord = hint;
         guessNum = guess;
         hintSubmitted = true;
+        System.out.println(hintWord + " " + guessNum + " " + hintSubmitted);
+        sendStuff();
     }
 
     static void gameOver (){
@@ -143,8 +147,8 @@ public class Main {
                     turn = 7;
                     System.out.println("card chosen");
                 }
-
                 if (hintSubmitted) {
+                    System.out.println("Submitted hint became true");
                     osToServer.writeUTF(hintWord);
                     osToServer.writeInt(guessNum);
                     hintSubmitted = false;
@@ -176,6 +180,21 @@ public class Main {
             guesser_role.displayHint(hintWord, guessNum);
         }
     }
+    static void sendStuff() throws IOException{
+        if (cardChanged != 100) {
+            osToServer.writeInt(cardChanged);
+            cardChanged = 100;
+            turn = 7;
+            System.out.println("card chosen");
+        }
+        if (hintSubmitted) {
+            System.out.println("Submitted hint became true");
+            osToServer.writeUTF(hintWord);
+            osToServer.writeInt(guessNum);
+            hintSubmitted = false;
+            turn = 7;
+            System.out.println("hint submitted");
+        }
+    }
 }
-
 
