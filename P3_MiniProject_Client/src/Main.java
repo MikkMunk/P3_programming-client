@@ -137,7 +137,6 @@ public class Main {
             System.out.println("It is you turn, please provide input");
 
             while(turn == role_number) {
-
                 if (cardChanged != 100) {
                     osToServer.writeInt(cardChanged);
                     cardChanged = 100;

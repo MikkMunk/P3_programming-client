@@ -53,7 +53,7 @@ public class UI_Layout{
     private JButton text_card23;
     private JButton text_card24;
     private JButton text_card25;
-    private JButton Submit;
+    private JButton Submit = new JButton("submit");
 
     private JButton[] text_cards = {text_card1, text_card2, text_card3, text_card4, text_card5, text_card6, text_card7,
             text_card8, text_card9, text_card10, text_card11, text_card12, text_card13, text_card14, text_card15, text_card16,
@@ -104,7 +104,7 @@ public class UI_Layout{
             hint_display.setEditable(true);
             guessNo_display.setEditable(true);
             role_display.setText("Instructor");
-            Submit.addActionListener(new readHint(hint_display, guessNo_display));
+            Submit.addActionListener(new ReadHint(hint_display, guessNo_display));
             for (int i = 0; i < 25; i++) {
                 if (cards[i].isPlayed() == false) {
                     colors[i] = cards[i].getNumber();
@@ -149,16 +149,19 @@ public class UI_Layout{
         }
     }
 
-    class readHint implements ActionListener{
+    class ReadHint implements ActionListener{
         JTextField hint;
         JTextField number;
 
-        readHint(JTextField hint, JTextField number){
+        ReadHint(JTextField hint, JTextField number){
             this.hint = hint;
             this.number = number;
         }
         public void actionPerformed(ActionEvent e) {
-            Main.submittedHint(hint.getText(), Integer.parseInt(number.getText()));
+            String command = e.getActionCommand();
+           if (command.equals("submit")){
+               Main.submittedHint(hint.getText(), Integer.parseInt(number.getText()));
+           }
         }
     }
 
