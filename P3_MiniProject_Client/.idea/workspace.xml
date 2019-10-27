@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bf6759c-5601-4f17-a194-1bdbd7b50f1a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Cards.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Cards.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Guesser_role$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Guesser_role$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Guesser_role.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Guesser_role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Instructor_role$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Instructor_role$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Instructor_role.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Instructor_role.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout$gameStarted.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout$cardChosen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout$cardChosen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P3_MiniProject_Client/UI_Layout.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI_Layout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI_Layout.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,6 +32,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571316548365" />
+    <property name="last_opened_file_path" value="D:/sara8/IdeaProjects/P3_MiniProject_Client_2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -117,5 +113,41 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>174</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
