@@ -144,9 +144,13 @@ public class UI_Layout{
         }
 
         public void actionPerformed(ActionEvent e) { //this is called when the action listener activates the class
-            Main.changedColor(card_number);
+            try {
+                Main.changedColor(card_number);
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
 
-            selectCard(card, text_card, card.getNumber());
+            selectCard(text_card, card.getNumber());
         }
     }
 
@@ -170,7 +174,7 @@ public class UI_Layout{
         }
     }
 
-    void selectCard (Card card, JButton text_card, int color){
+    void selectCard (JButton text_card, int color){
         if (color == 0){
             text_card.setBackground(strong_black);
         }
@@ -193,7 +197,7 @@ public class UI_Layout{
     public void changeCard (Card[] cards){
         for(int i = 0; i < 25; i++) {
             if (cards[i].isPlayed()) {
-                selectCard(cards[i], text_cards[i], cards[i].getNumber());
+                selectCard(text_cards[i], cards[i].getNumber());
             }
         }
     }

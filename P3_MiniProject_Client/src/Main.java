@@ -9,6 +9,7 @@ public class Main {
     static String hintWord = "nothing";
     static int guessNum = 0;
     static boolean hintSubmitted = false;
+    static boolean cardChosen = false;
     static int turn = 7;
     static boolean isPlaying = true;
     static Card[] cards = new Card[25];
@@ -42,8 +43,28 @@ public class Main {
                 System.out.println("The game has started");
                 System.out.println(isFromServer.readUTF());
                 role_number = isFromServer.readInt();
+                turn = isFromServer.readInt();
 
-                loadDisplay(role_number, objectInputStream, isFromServer);
+                while(isPlaying){
+
+                    if(turn == role_number){
+                        System.out.println("It is your turn");
+                        loadDisplay(role_number, objectInputStream, isFromServer);
+                        //Thread.sleep(20000);
+                        sendStuff();
+
+                        if(role_number == 0 || role_number == 2){
+                            instructor_role.closeUI();
+                        }
+                        else {
+                            guesser_role.closeUI();
+                        }
+                    }
+
+
+                }
+
+                /*loadDisplay(role_number, objectInputStream, isFromServer);
 
                 nextTurn(role_number, osToServer, isFromServer);
 
@@ -51,7 +72,7 @@ public class Main {
                     updateDisplay(isFromServer, objectInputStream, role_number);
 
                     nextTurn(role_number, osToServer, isFromServer);
-                }
+                } */
 
                 //connect = false;
 
@@ -94,15 +115,18 @@ public class Main {
 
     }
 
-    public static void changedColor (int cardNumber){
+    public static void changedColor (int cardNumber) throws IOException {
         cardChanged = cardNumber;
+        cardChosen = true;
+        System.out.println("The card " + cardChanged + " has been chosen");
+        sendStuff();
     }
 
     public static void submittedHint (String hint, int guess) throws IOException {
         hintWord = hint;
         guessNum = guess;
         hintSubmitted = true;
-        System.out.println(hintWord + " " + guessNum + " " + hintSubmitted);
+        System.out.println(hintWord + " " + guessNum + " has been submitted");
         sendStuff();
     }
 
@@ -112,6 +136,7 @@ public class Main {
 
     public static void loadDisplay (int role_number, ObjectInputStream objectInputStream, DataInputStream isFromServer)
             throws IOException, ClassNotFoundException, InvocationTargetException, InterruptedException {
+        System.out.println(isFromServer.readUTF());
         for (int i = 0; i < 25; i++ ) {
             cards[i] = (Card) objectInputStream.readObject();
             System.out.println(cards[i].getName());
@@ -147,10 +172,11 @@ public class Main {
             System.out.println("It is you turn, please provide input");
 
             while(turn == role_number) {
-                if (cardChanged != 100) {
+                if (cardChosen) {
                     osToServer.writeInt(cardChanged);
                     cardChanged = 100;
                     turn = 7;
+                    cardChosen = false;
                     System.out.println("card chosen");
                 }
                 if (hintSubmitted) {
@@ -164,11 +190,13 @@ public class Main {
             }
         } else {
             System.out.println("wait for your turn");
+
         }
     }
 
     static void updateDisplay (DataInputStream isFromServer, ObjectInputStream objectInputStream, int role_number)
             throws IOException, ClassNotFoundException {
+        System.out.println(isFromServer.readUTF());
         System.out.println("updating");
         for (int i = 0; i < 25; i++ ) {
             cards[i] = (Card) objectInputStream.readObject();
@@ -190,9 +218,10 @@ public class Main {
         }
     }
     static void sendStuff() throws IOException{
-        if (cardChanged != 100) {
+        if (cardChosen) {
             osToServer.writeInt(cardChanged);
             cardChanged = 100;
+            cardChosen = false;
             turn = 7;
             System.out.println("card chosen");
         }
