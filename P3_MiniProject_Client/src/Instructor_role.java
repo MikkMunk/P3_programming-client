@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.lang.reflect.InvocationTargetException;
 
 public class Instructor_role {
     UI_Layout UI;
@@ -7,7 +8,7 @@ public class Instructor_role {
         UI = new UI_Layout(cards, 1, hint_Word, guessNo, team);
     }
 
-    public void display() {
+    public void display() throws InvocationTargetException, InterruptedException {
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override

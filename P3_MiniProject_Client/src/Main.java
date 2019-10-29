@@ -1,4 +1,5 @@
 import java.io.*;
+import java.lang.reflect.InvocationTargetException;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ public class Main {
     static Card[] cards = new Card[25];
     static Instructor_role instructor_role;
     static Guesser_role guesser_role;
+    static boolean isDisplayed;
 
     static DataOutputStream osToServer;
 
@@ -23,7 +25,7 @@ public class Main {
 
         try {
             System.out.println("about to try stuff");
-            Socket socket = new Socket("192.168.43.18", 8000);
+            Socket socket = new Socket("localhost", 5000);
             System.out.println("socket made");
             DataInputStream isFromServer = new DataInputStream(socket.getInputStream());
             System.out.println("about to make object input");
@@ -109,7 +111,7 @@ public class Main {
     }
 
     public static void loadDisplay (int role_number, ObjectInputStream objectInputStream, DataInputStream isFromServer)
-            throws IOException, ClassNotFoundException {
+            throws IOException, ClassNotFoundException, InvocationTargetException, InterruptedException {
         for (int i = 0; i < 25; i++ ) {
             cards[i] = (Card) objectInputStream.readObject();
             System.out.println(cards[i].getName());
@@ -197,6 +199,10 @@ public class Main {
             turn = 7;
             System.out.println("hint submitted");
         }
+    }
+
+    static void setIsDisplayed(){
+        isDisplayed = true;
     }
 }
 
