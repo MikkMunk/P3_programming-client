@@ -117,9 +117,11 @@ public class Main {
             System.out.println(cards[i].getName());
         }
         System.out.println("cards received");
+        osToServer.writeUTF("cards received");
 
         hintWord = isFromServer.readUTF();
         guessNum = isFromServer.readInt();
+        osToServer.writeUTF("hint received");
 
         if (role_number == 0){
             instructor_role = new Instructor_role(cards, 1, hintWord, guessNum);
@@ -139,6 +141,7 @@ public class Main {
             throws IOException {
         System.out.println("new turn");
         turn = isFromServer.readInt();
+        osToServer.writeUTF("turn number received");
 
         if (turn == role_number) {
             System.out.println("It is you turn, please provide input");
@@ -171,9 +174,11 @@ public class Main {
             cards[i] = (Card) objectInputStream.readObject();
         }
         System.out.println("cards updated");
+        osToServer.writeUTF("cards received");
 
         hintWord = isFromServer.readUTF();
         guessNum = isFromServer.readInt();
+        osToServer.writeUTF("hint received");
 
         if (role_number == 0 || role_number == 2){
             instructor_role.updateCards(cards);
