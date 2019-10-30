@@ -6,33 +6,25 @@ public class Player_role {
     JFrame frame;
 
     Player_role(Card[] cards, int team, int role, String hint_Word, int guessNo){
-        UI = new UI_Layout(cards, role, hint_Word, guessNo, team);
+        UI = new UI_Layout(cards, role, hint_Word, guessNo, team); //creating a UI layout for the player
     }
 
-    public void display() throws InvocationTargetException, InterruptedException {
+    public void display() throws InvocationTargetException, InterruptedException { //loads and displays the visual UI layout
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                frame = new JFrame("UI_Layout");
-                frame.setContentPane(UI.Gamescreen_view);
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame = new JFrame("UI_Layout"); //creating the frame/window for the UI
+                frame.setContentPane(UI.Gamescreen_view); //loading the content from the UI object
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //setting the default ability to close the window
                 frame.pack();
-                frame.setVisible(true);
+                frame.setVisible(true); //showing the UI on the screen
             }
         });
     }
 
-    void displayHint(String hint, int num){
-        UI.setHint(hint, num);
-    }
-
-    void updateCards(Card[] cards){
-        UI.changeCard(cards);
-    }
-
     void closeUI (){
-        frame.setVisible(false); //you can't see me!
-        frame.dispose();
+        frame.setVisible(false); //making the UI invisible
+        frame.dispose(); //closing the UI down completely
     }
 }
