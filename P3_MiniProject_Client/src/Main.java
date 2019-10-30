@@ -64,46 +64,7 @@ public class Main {
 
                 }
 
-                /*loadDisplay(role_number, objectInputStream, isFromServer);
 
-                nextTurn(role_number, osToServer, isFromServer);
-
-                while (isPlaying) {
-                    updateDisplay(isFromServer, objectInputStream, role_number);
-
-                    nextTurn(role_number, osToServer, isFromServer);
-                } */
-
-                //connect = false;
-
-
-                /*Cards word1 = new Cards();
-
-                System.out.print("1Enter word string: ");
-                word1.text = input.next();
-                System.out.print("1Enter word int: ");
-                word1.number = input.nextInt();
-                System.out.print("1Enter word bool: ");
-                word1.setHah(input.nextBoolean());
-
-                objectOutputStream.writeObject(word1);
-
-                Word word2 = new Word();
-
-                System.out.print("2Enter word string: ");
-                word2.text = input.next();
-                System.out.print("2Enter word int: ");
-                word2.number = input.nextInt();
-                System.out.print("2Enter word bool: ");
-                word2.setHah(input.nextBoolean());
-
-                objectOutputStream.writeObject(word2);
-
-
-
-                if (input.next().equals("no")) {
-                    connect = false;
-                } */
             }
             input.close();
             socket.close();
@@ -116,10 +77,16 @@ public class Main {
     }
 
     public static void changedColor (int cardNumber) throws IOException {
+
         cardChanged = cardNumber;
-        cardChosen = true;
         System.out.println("The card " + cardChanged + " has been chosen");
-        sendStuff();
+        cards[cardChanged].setPlayed(true);
+        guessNum--;
+
+        if (guessNum == 0) {
+            cardChosen = true;
+            sendStuff();
+        }
     }
 
     public static void submittedHint (String hint, int guess) throws IOException {
@@ -171,71 +138,11 @@ public class Main {
             guesser_role.display(); }
     }
 
-    static void nextTurn (int role_number, DataOutputStream osToServer, DataInputStream isFromServer)
-            throws IOException {
-        System.out.println("new turn");
-        turn = isFromServer.readInt();
-        osToServer.writeUTF("turn number received");
-
-        if (turn == role_number) {
-            System.out.println("It is you turn, please provide input");
-
-            while(turn == role_number) {
-                if (cardChosen) {
-                    osToServer.writeInt(cardChanged);
-                    cardChanged = 100;
-                    turn = 7;
-                    cardChosen = false;
-                    System.out.println("card chosen");
-                }
-                if (hintSubmitted) {
-                    System.out.println("Submitted hint became true");
-                    osToServer.writeUTF(hintWord);
-                    osToServer.writeInt(guessNum);
-                    hintSubmitted = false;
-                    turn = 7;
-                    System.out.println("hint submitted");
-                }
-            }
-        } else {
-            System.out.println("wait for your turn");
-
-        }
-    }
-
-    static void updateDisplay (DataInputStream isFromServer, ObjectInputStream objectInputStream, int role_number)
-            throws IOException, ClassNotFoundException {
-        System.out.println(isFromServer.readUTF());
-        if (isFirstTurn) {
-            for (int i = 0; i < 25; i++) {
-                cards[i] = (Card) objectInputStream.readObject();
-                System.out.println(cards[i].getName());
-            }
-            System.out.println("cards received");
-            isFirstTurn = false;
-        } else {
-            for (int i = 0; i < 25; i++){
-                cards[i].setPlayed(isFromServer.readBoolean());
-            }
-        }
-        osToServer.writeUTF("cards received");
-
-        hintWord = isFromServer.readUTF();
-        guessNum = isFromServer.readInt();
-        osToServer.writeUTF("hint received");
-
-        if (role_number == 0 || role_number == 2){
-            instructor_role.updateCards(cards);
-            instructor_role.displayHint(hintWord, guessNum);
-        }
-        else if (role_number == 1 || role_number == 3){
-            guesser_role.updateCards(cards);
-            guesser_role.displayHint(hintWord, guessNum);
-        }
-    }
     static void sendStuff() throws IOException{
         if (cardChosen) {
-            osToServer.writeInt(cardChanged);
+            for (int i = 0; i < 25; i++) {
+                osToServer.writeBoolean(cards[i].isPlayed());
+            }
             cardChanged = 100;
             cardChosen = false;
             turn = 7;
