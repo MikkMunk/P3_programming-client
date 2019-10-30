@@ -17,6 +17,7 @@ public class Main {
     static Guesser_role guesser_role;
     static boolean myTurn = false;
     static int role_number;
+    static boolean isFirstTurn = true;
 
     static DataOutputStream osToServer;
 
@@ -136,11 +137,20 @@ public class Main {
     public static void loadDisplay (int role_number, ObjectInputStream objectInputStream, DataInputStream isFromServer)
             throws IOException, ClassNotFoundException, InvocationTargetException, InterruptedException {
         System.out.println(isFromServer.readUTF());
-        for (int i = 0; i < 25; i++ ) {
-            cards[i] = (Card) objectInputStream.readObject();
-            System.out.println(cards[i].getName());
+        if (isFirstTurn) {
+            System.out.println("getting the cards");
+            for (int i = 0; i < 25; i++) {
+                cards[i] = (Card) objectInputStream.readObject();
+                System.out.println(cards[i].getName());
+            }
+            System.out.println("cards received");
+            isFirstTurn = false;
+        } else {
+            System.out.println("getting booleans");
+            for (int i = 0; i < 25; i++){
+                cards[i].setPlayed(isFromServer.readBoolean());
+            }
         }
-        System.out.println("cards received");
         osToServer.writeUTF("cards received");
 
         hintWord = isFromServer.readUTF();
@@ -196,11 +206,18 @@ public class Main {
     static void updateDisplay (DataInputStream isFromServer, ObjectInputStream objectInputStream, int role_number)
             throws IOException, ClassNotFoundException {
         System.out.println(isFromServer.readUTF());
-        System.out.println("updating");
-        for (int i = 0; i < 25; i++ ) {
-            cards[i] = (Card) objectInputStream.readObject();
+        if (isFirstTurn) {
+            for (int i = 0; i < 25; i++) {
+                cards[i] = (Card) objectInputStream.readObject();
+                System.out.println(cards[i].getName());
+            }
+            System.out.println("cards received");
+            isFirstTurn = false;
+        } else {
+            for (int i = 0; i < 25; i++){
+                cards[i].setPlayed(isFromServer.readBoolean());
+            }
         }
-        System.out.println("cards updated");
         osToServer.writeUTF("cards received");
 
         hintWord = isFromServer.readUTF();
