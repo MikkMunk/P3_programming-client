@@ -15,7 +15,8 @@ public class Main {
     static Card[] cards = new Card[25];
     static Instructor_role instructor_role;
     static Guesser_role guesser_role;
-    static boolean isDisplayed;
+    static boolean myTurn = false;
+    static int role_number;
 
     static DataOutputStream osToServer;
 
@@ -38,29 +39,27 @@ public class Main {
             System.out.println("Stuff got tried");
 
             while (connect) {
-                int role_number;
 
                 System.out.println("The game has started");
                 System.out.println(isFromServer.readUTF());
                 role_number = isFromServer.readInt();
-                turn = isFromServer.readInt();
 
                 while(isPlaying){
+                    turn = isFromServer.readInt();
 
                     if(turn == role_number){
-                        System.out.println("It is your turn");
+                        myTurn = true;
                         loadDisplay(role_number, objectInputStream, isFromServer);
-                        //Thread.sleep(20000);
-                        sendStuff();
 
-                        if(role_number == 0 || role_number == 2){
-                            instructor_role.closeUI();
+                        while (myTurn) {
+                            System.out.println("It is your turn");
+                            Thread.sleep(5000);
                         }
-                        else {
-                            guesser_role.closeUI();
-                        }
+                    } else {
+                        System.out.println("Wait for your turn");
                     }
-
+                    Thread.sleep(5000);
+                    System.out.println("Im number " + role_number + " it is turn " + turn);
 
                 }
 
@@ -224,6 +223,8 @@ public class Main {
             cardChosen = false;
             turn = 7;
             System.out.println("card chosen");
+            closeDisplay();
+            myTurn = false;
         }
         if (hintSubmitted) {
             System.out.println("Submitted hint became true");
@@ -232,11 +233,19 @@ public class Main {
             hintSubmitted = false;
             turn = 7;
             System.out.println("hint submitted");
+            closeDisplay();
+            myTurn = false;
         }
     }
 
-    static void setIsDisplayed(){
-        isDisplayed = true;
+
+    static void closeDisplay(){
+        if(role_number == 0 || role_number == 2){
+            instructor_role.closeUI();
+        }
+        else {
+            guesser_role.closeUI();
+        }
     }
 }
 
