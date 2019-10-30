@@ -60,10 +60,8 @@ public class Main {
                         System.out.println("Wait for your turn");
                     }
                     Thread.sleep(5000);
-                    System.out.println("Im number " + role_number + " it is turn " + turn);
-
+                    //System.out.println("Im number " + role_number + " it is turn " + turn);
                 }
-
 
             }
             input.close();
@@ -73,11 +71,9 @@ public class Main {
             System.out.println(e);
             throw new Error ("bad thing also happen");
         }
-
     }
 
     public static void changedColor (int cardNumber) throws IOException {
-
         cardChanged = cardNumber;
         System.out.println("The card " + cardChanged + " has been chosen");
         cards[cardChanged].setPlayed(true);
@@ -87,6 +83,25 @@ public class Main {
             cardChosen = true;
             sendStuff();
         }
+        if (role_number ==  1){
+            if (cards[cardChanged].getNumber() == 3){
+                System.out.println("Correct guess");
+            } else {
+                System.out.println("Wrong guess");
+                cardChosen = true;
+                sendStuff();
+            }
+        }
+        else if (role_number == 3){
+            if (cards[cardChanged].getNumber() == 2){
+                System.out.println("Correct guess");
+            } else {
+                System.out.println("Wrong guess");
+                cardChosen = true;
+                sendStuff();
+            }
+        }
+
     }
 
     public static void submittedHint (String hint, int guess) throws IOException {
@@ -161,7 +176,6 @@ public class Main {
             myTurn = false;
         }
     }
-
 
     static void closeDisplay(){
         if(role_number == 0 || role_number == 2){
