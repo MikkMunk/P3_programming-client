@@ -13,8 +13,7 @@ public class Main {
     static int turn = 7;
     static boolean isPlaying = true;
     static Card[] cards = new Card[25];
-    static Instructor_role instructor_role;
-    static Guesser_role guesser_role;
+    static Player_role player_role;
     static boolean myTurn = false;
     static int role_number;
     static boolean isFirstTurn = true;
@@ -139,18 +138,13 @@ public class Main {
         guessNum = isFromServer.readInt();
         osToServer.writeUTF("hint received");
 
-        if (role_number == 0){
-            instructor_role = new Instructor_role(cards, 1, hintWord, guessNum);
-            instructor_role.display(); }
-        else if (role_number == 1){
-            guesser_role = new Guesser_role(cards, 1, hintWord, guessNum);
-            guesser_role.display(); }
-        else if (role_number == 2){
-            instructor_role = new Instructor_role(cards, 2, hintWord, guessNum);
-            instructor_role.display(); }
-        else if (role_number == 3){
-            guesser_role = new Guesser_role(cards, 2, hintWord, guessNum);
-            guesser_role.display(); }
+        if (role_number == 0 || role_number == 2){
+            player_role = new Player_role(cards, 1, 1,  hintWord, guessNum);
+            player_role.display(); }
+        else if (role_number == 1 || role_number == 3){
+            player_role = new Player_role(cards, 1, 2,  hintWord, guessNum);
+            player_role.display(); }
+
     }
 
     static void sendStuff() throws IOException{
@@ -162,7 +156,7 @@ public class Main {
             cardChosen = false;
             turn = 7;
             System.out.println("card chosen");
-            closeDisplay();
+            player_role.closeUI();
             myTurn = false;
         }
         if (hintSubmitted) {
@@ -172,18 +166,10 @@ public class Main {
             hintSubmitted = false;
             turn = 7;
             System.out.println("hint submitted");
-            closeDisplay();
+            player_role.closeUI();
             myTurn = false;
         }
     }
 
-    static void closeDisplay(){
-        if(role_number == 0 || role_number == 2){
-            instructor_role.closeUI();
-        }
-        else {
-            guesser_role.closeUI();
-        }
-    }
 }
 

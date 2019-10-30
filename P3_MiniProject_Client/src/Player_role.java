@@ -1,14 +1,15 @@
 import javax.swing.*;
+import java.lang.reflect.InvocationTargetException;
 
-public class Guesser_role {
+public class Player_role {
     UI_Layout UI;
     JFrame frame;
 
-    Guesser_role (Card[] cards, int team, String hint_Word, int guessNo) {
-        UI = new UI_Layout(cards, 2, hint_Word, guessNo, team);
+    Player_role(Card[] cards, int team, int role, String hint_Word, int guessNo){
+        UI = new UI_Layout(cards, role, hint_Word, guessNo, team);
     }
 
-    public void display() {
+    public void display() throws InvocationTargetException, InterruptedException {
 
         SwingUtilities.invokeLater(new Runnable() {
             @Override
