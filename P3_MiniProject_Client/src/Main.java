@@ -26,7 +26,7 @@ public class Main {
 
         try {
             System.out.println("about to try stuff");
-            Socket socket = new Socket("localhost", 5000);
+            Socket socket = new Socket("172.20.10.6", 5000);
             System.out.println("socket made");
             DataInputStream isFromServer = new DataInputStream(socket.getInputStream());
             System.out.println("about to make object input");
@@ -76,11 +76,6 @@ public class Main {
         cards[cardChanged].setPlayed(true); //registering that the card has been chosen
         guessNum--; //counting down the number of possible guesses based on the number given by the instructor
 
-        if (guessNum == 0) { //running when all guesses have been used
-            cardChosen = true;//registering that input has been given
-            Thread.sleep(2000); //putting a small delay so the player has time to see the color of their last choice
-            sendStuff(); //function that sends info to the server and ends turn
-        }
         if (role_number ==  1){ //checking if the guess was right for members on the red team
             if (cards[cardChanged].getNumber() == 3){
                 System.out.println("Correct guess");
@@ -100,6 +95,11 @@ public class Main {
                 Thread.sleep(2000); //putting a small delay so the player has time to see the color of their last choice
                 sendStuff(); //function that sends info to the server and ends turn
             }
+        }
+        if (guessNum == 0) { //running when all guesses have been used
+            cardChosen = true;//registering that input has been given
+            Thread.sleep(2000); //putting a small delay so the player has time to see the color of their last choice
+            sendStuff(); //function that sends info to the server and ends turn
         }
 
     }
@@ -138,11 +138,17 @@ public class Main {
         guessNum = isFromServer.readInt(); //receiving current guess number
         osToServer.writeUTF("hint received");
 
-        if (role_number == 0 || role_number == 2){ //loads and displays the UI if the player is an instructor
+        if (role_number == 0){ //loads and displays the UI if the player is an instructor
             player_role = new Player_role(cards, 1, 1,  hintWord, guessNum);
             player_role.display(); }
-        else if (role_number == 1 || role_number == 3){ //loads and displays the UI if the player is a guesser
+        else if (role_number == 1){ //loads and displays the UI if the player is a guesser
             player_role = new Player_role(cards, 1, 2,  hintWord, guessNum);
+            player_role.display(); }
+        else if (role_number == 2){ //loads and displays the UI if the player is an instructor
+            player_role = new Player_role(cards, 2, 1,  hintWord, guessNum);
+            player_role.display(); }
+        else if (role_number == 3){ //loads and displays the UI if the player is a guesser
+            player_role = new Player_role(cards, 2, 2,  hintWord, guessNum);
             player_role.display(); }
 
     }

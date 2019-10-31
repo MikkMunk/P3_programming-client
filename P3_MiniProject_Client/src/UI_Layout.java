@@ -143,12 +143,11 @@ public class UI_Layout{
 
         public void actionPerformed(ActionEvent e) { //this is called when the action listener activates the class
             try {
+                selectCard(text_card, card.getNumber()); //calls function to change the color of the chosen card
                 Main.changedColor(card_number); //letting the main function know which card was selected
             } catch (IOException | InterruptedException ex) {
                 ex.printStackTrace();
             }
-
-            selectCard(text_card, card.getNumber()); //calls function to change the color of the chosen card
         }
     }
 
