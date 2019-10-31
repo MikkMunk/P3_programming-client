@@ -13,15 +13,15 @@ public class UI_Layout{
 
 
 //Creating the different colors that will be applied to the text cards
-    Color red = new Color(220, 130, 130);
-    Color blue = new Color(130, 150, 220);
+    Color red = new Color(240, 150, 150);
+    Color blue = new Color(140, 160, 230);
     Color grey = new Color(230, 240, 220);
     Color black = new Color(120, 120, 120);
 
-    Color strong_red = new Color(220, 70, 70);
-    Color strong_blue = new Color(70, 90, 220);
-    Color strong_grey = new Color(170, 170, 100);
-    Color strong_black = new Color(50, 50, 50);
+    Color strong_red = new Color(190, 40, 40);
+    Color strong_blue = new Color(50, 70, 200);
+    Color strong_grey = new Color(160, 160, 90);
+    Color strong_black = new Color(40, 40, 40);
 
 //auto generated code initializing all the different elements of the UI
     public JPanel Gamescreen_view;
@@ -144,6 +144,7 @@ public class UI_Layout{
         public void actionPerformed(ActionEvent e) { //this is called when the action listener activates the class
             try {
                 selectCard(text_card, card.getNumber()); //calls function to change the color of the chosen card
+                Thread.sleep(2000); //giving the player time to see the color they chose
                 Main.changedColor(card_number); //letting the main function know which card was selected
             } catch (IOException | InterruptedException ex) {
                 ex.printStackTrace();
