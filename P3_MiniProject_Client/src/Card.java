@@ -23,19 +23,4 @@ public class Card implements Serializable{
 
 }
 
-/*public class Word implements Serializable {
-    String text;
-    int number = 0;
-    boolean hah = false;
 
-    Word() {
-        text = "hej";
-    }
-
-    public void setHah(boolean hah) { this.hah = hah;
-    }
-
-    public String getText() {
-        return text;
-    }
-} */
